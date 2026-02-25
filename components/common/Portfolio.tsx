@@ -19,8 +19,8 @@ export default function Portfolio() {
         { id: 10, img: "/images/banner5.jpg", title: "Royal Stage", category: "Stages" },
         { id: 11, img: "/images/banner6.jpg", title: "Royal Stage", category: "Stages" },
         { id: 12, img: "/images/banner7.jpg", title: "Sacred Mandap", category: "Mandap" },
-        { id: 13, img: "/images/banner8.jpg", title: "Sacred Entery", category: "Eentry Gate" },
-        { id: 14, img: "/images/banner9.jpg", title: "Romatic Stage", category: "Stages" },
+        { id: 13, img: "/images/banner8.jpg", title: "Sacred Entry", category: "Eentry Gate" },
+        { id: 14, img: "/images/banner9.jpg", title: "Romantic Stage", category: "Stages" },
     ];
 
     const filters = ["All", "Haldi", "Mandap", "Stages", "Corridor"];
