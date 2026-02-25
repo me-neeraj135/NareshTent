@@ -1,66 +1,115 @@
+"use client";
+
 import { BsStars } from "react-icons/bs";
 import Button from "../ui/Button";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 export default function Elevating() {
+    const revealRef = useScrollReveal();
+
     return (
         <section
             id="elevating"
-            className="section-pad relative bg-[#0a0a0a] overflow-hidden"
+            className="section-pad relative bg-background overflow-hidden"
         >
-            {/* Radial glow — CSS animation, no JS needed */}
+            {/* Romantic Watercolor Glow */}
             <div
                 className="pointer-events-none absolute inset-0 flex items-center justify-center"
                 aria-hidden="true"
             >
-                <div className="h-[550px] w-[550px] rounded-full bg-[#c5a059]/6 blur-[140px] animate-glow-pulse" />
+                <div className="h-[700px] w-[700px] rounded-full bg-[#6b7a5e]/5 blur-[100px] animate-pulse" />
             </div>
 
-            <div className="container-custom relative z-10">
-                <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+            {/* Decorative Botanical SVGs */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+                <svg style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                    <defs>
+                        <linearGradient id="gradSage" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#4A7C59" />
+                            <stop offset="50%" stopColor="#8FCB9B" />
+                            <stop offset="100%" stopColor="#D2E8E3" />
+                        </linearGradient>
+                        <linearGradient id="gradRose" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#E29578" />
+                            <stop offset="50%" stopColor="#FFDDD2" />
+                            <stop offset="100%" stopColor="#83C5BE" />
+                        </linearGradient>
+                        <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#FFB703" />
+                            <stop offset="50%" stopColor="#FB8500" />
+                            <stop offset="100%" stopColor="#FFD700" />
+                        </linearGradient>
+                        <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#7209B7" />
+                            <stop offset="50%" stopColor="#B5179E" />
+                            <stop offset="100%" stopColor="#F72585" />
+                        </linearGradient>
+                    </defs>
+                </svg>
 
-                    {/* Stars divider */}
-                    <div className="mb-8 flex items-center gap-5 text-[#c5a059] animate-fade-in">
-                        <div className="h-px w-10 bg-[#c5a059]/40" />
-                        <BsStars className="text-xl opacity-80" />
-                        <div className="h-px w-10 bg-[#c5a059]/40" />
-                    </div>
+                {/* Petal 1 - Top Left */}
+                <svg className="absolute top-[15%] left-[10%] h-24 w-24 opacity-60 animate-float drop-shadow-[0_0_20px_rgba(74,124,89,0.5)]" viewBox="0 0 100 100" fill="url(#gradSage)">
+                    <path d="M50 0C60 30 90 40 50 100C10 40 40 30 50 0Z" />
+                </svg>
 
-                    {/* Heading */}
+                {/* Petal 2 - Bottom Right */}
+                <svg className="absolute bottom-[20%] right-[10%] h-32 w-32 opacity-50 animate-drift drop-shadow-[0_0_25px_rgba(226,149,120,0.4)]" viewBox="0 0 100 100" fill="url(#gradRose)" style={{ animationDelay: '-3s' }}>
+                    <path d="M50 0C80 20 100 50 50 100C0 50 20 20 50 0Z" />
+                </svg>
+
+                {/* Flower 1 - Center Left */}
+                <svg className="absolute top-[45%] left-[5%] h-20 w-20 opacity-50 animate-drift drop-shadow-[0_0_20px_rgba(114,9,183,0.4)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-7s' }}>
+                    <path d="M50 50C50 30 70 10 90 30C70 50 50 70 30 50C10 30 30 10 50 30M50 50C30 50 10 70 30 90C50 70 70 50 50 30M50 50C50 70 30 90 10 70C30 50 50 30 70 50C90 70 70 90 50 70" />
+                </svg>
+
+                {/* Star - Top Right */}
+                <svg className="absolute top-[10%] right-[15%] h-24 w-24 opacity-60 animate-float drop-shadow-[0_0_20px_rgba(255,183,3,0.6)]" viewBox="0 0 100 100" fill="url(#gradGold)" style={{ animationDelay: '-1.5s' }}>
+                    <path d="M50 10L61 35L87 35L66 51L74 76L50 61L26 76L34 51L13 35L39 35Z" />
+                </svg>
+
+                {/* Extra accent - Bottom Left */}
+                <svg className="absolute bottom-[10%] left-[15%] h-16 w-16 opacity-40 animate-float drop-shadow-[0_0_15px_rgba(247,37,133,0.4)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-5s' }}>
+                    <circle cx="50" cy="50" r="40" stroke="url(#gradViolet)" strokeWidth="2" fill="none" opacity="0.5" />
+                    <path d="M50 10 L50 90 M10 50 L90 50" stroke="url(#gradViolet)" strokeWidth="2" />
+                </svg>
+            </div>
+
+            <div className="container-custom relative z-10" ref={revealRef}>
+                <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+
+                    <span className="section-label">Our Heritage</span>
+
                     <h2
-                        className="mb-6 font-serif text-white tracking-tighter leading-[0.95] animate-fade-in-up"
+                        className="mb-10 font-serif leading-tight text-white reveal-on-scroll"
                         style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}
                     >
-                        Elevating Moments<br />
-                        Into{" "}
-                        <em className="not-italic text-[#e7d3b0]">Memories.</em>
+                        The Architecture of<br />
+                        <span className="text-gold italic">Pure Imperial Legacy.</span>
                     </h2>
 
-                    {/* Description — brighter! */}
-                    <p
-                        className="mb-10 text-base md:text-[1.05rem] font-light leading-[1.9] text-white/70 max-w-xl animate-fade-in-up"
-                        style={{ animationDelay: "0.15s" }}
-                    >
-                        Naresh Tent House is a premier wedding design and event planning powerhouse.
-                        We transform visions into breathtaking realities through bespoke upholstery,
-                        innovative lighting, and masterful floral arrangements.
+                    <div className="mb-12 h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+                    <p className="max-w-2xl text-[18px] font-light leading-relaxed text-foreground/60 reveal-on-scroll">
+                        Established for the chosen few, we translate ancestral majesty into structural reality.
+                        Our creations are not merely decorations; they are the stage for once-in-a-lifetime legacies,
+                        where every gold thread and velvet petal is orchestrating a story of eternal grandeur.
                     </p>
 
                     {/* CTA */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                    <div className="reveal-on-scroll pt-15" style={{ transitionDelay: "300ms" }}>
                         <Button />
                     </div>
 
                     {/* Vertical branding */}
                     <div
-                        className="mt-14 flex flex-col items-center gap-4 animate-fade-in"
-                        style={{ animationDelay: "0.5s" }}
+                        className="mt-12 sm:mt-20 flex flex-col items-center gap-5 reveal-on-scroll"
+                        style={{ transitionDelay: "500ms" }}
                     >
-                        <div className="h-14 w-px bg-gradient-to-b from-[#c5a059]/55 to-transparent" />
-                        <span className="text-[9px] uppercase tracking-[0.65em] text-[#c5a059]/45 font-sans">
+                        <div className="h-20 w-px bg-gradient-to-b from-[#6b7a5e]/30 to-transparent" />
+                        <span className="text-[10px] uppercase tracking-[0.7em] text-[#6b7a5e]/50 font-sans font-bold">
                             The NTH Standard
                         </span>
                     </div>
-
                 </div>
             </div>
         </section>

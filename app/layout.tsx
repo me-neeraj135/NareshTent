@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${montserrat.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${playfair.variable} ${montserrat.variable} antialiased`} suppressHydrationWarning>
         {children}
         <FloatingWhatsApp />
       </body>

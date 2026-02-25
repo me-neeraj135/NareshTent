@@ -7,80 +7,70 @@ interface ServiceCardProps {
     icon?: ReactNode;
     title: string;
     description: string;
+    image?: string;
 }
 
-export default function ServiceCard({ icon, title, description }: ServiceCardProps) {
+export default function ServiceCard({ icon, title, description, image }: ServiceCardProps) {
     return (
-        <article className="glass-card group relative flex flex-col h-full p-4 overflow-hidden
-                            transition-all duration-500 hover:-translate-y-2 cursor-default ">
+        <article className="glass-card group relative flex flex-col h-full p-6 sm:p-10 overflow-hidden
+                            transition-all duration-1000 cursor-default border-primary/10">
 
-
-
-
-            {/* ── Top-right glow orb ── */}
-            <div
-                className="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full
-                           bg-[#c5a059]/10 blur-3xl transition-all duration-700
-                           group-hover:bg-[#c5a059]/25 group-hover:scale-125"
-                aria-hidden="true"
-            />
-
-            {/* ── Gold accent corner ── */}
-            <div
-                className="absolute top-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#c5a059] to-transparent
-                           transition-all duration-700 group-hover:w-full"
-                aria-hidden="true"
-            />
-
-            {/* ── Icon container ── */}
-            {icon && (
-                <div
-                    className="mb-7 flex h-[60px] w-[60px] items-center justify-center
-                               border border-[#c5a059]/30
-                               bg-gradient-to-br from-[#c5a059]/15 to-[#c5a059]/5
-                               text-[#c5a059] text-2xl
-                               transition-all duration-500
-                               group-hover:border-[#c5a059]/70
-                               group-hover:bg-gradient-to-br group-hover:from-[#c5a059] group-hover:to-[#a68640]
-                               group-hover:text-black group-hover:shadow-lg group-hover:shadow-[#c5a059]/25"
-                >
-                    {icon}
+            {/* ── Background Image (Subtle Reveal) ── */}
+            {image && (
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src={image}
+                        alt=""
+                        className="h-full w-full object-cover transition-all duration-[2000ms]
+                                   opacity-0 group-hover:opacity-20 scale-110 group-hover:scale-100 grayscale hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-transparent" />
                 </div>
             )}
 
-            {/* ── Title ── */}
-            <h3
-                className="mb-2 font-serif text-[1.3rem] leading-tight text-white
-                           transition-colors duration-300 group-hover:text-[#e7d3b0]"
-            >
-                {title}
-            </h3>
+            <div className="relative z-10 flex flex-col h-full">
+                {/* ── Icon container (Imperial Gold) ── */}
+                {icon && (
+                    <div
+                        className="mb-6 sm:mb-12 flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center
+                                   border border-primary/20 bg-primary/5
+                                   text-primary text-xl sm:text-3xl
+                                   transition-all duration-700
+                                   group-hover:border-primary/60
+                                   group-hover:bg-primary group-hover:text-background 
+                                   group-hover:shadow-[0_0_30px_rgba(197,160,89,0.3)]"
+                    >
+                        {icon}
+                    </div>
+                )}
 
-            {/* ── Description ── */}
-            <p className="flex-1 text-sm leading-[1.85] text-white/65 transition-colors duration-400 group-hover:text-white/80">
-                {description}
-            </p>
+                {/* ── Title ── */}
+                <h3
+                    className="mb-4 sm:mb-6 font-serif text-[1.4rem] sm:text-[1.8rem] leading-tight text-white tracking-wide
+                               transition-colors duration-500 group-hover:text-primary"
+                >
+                    {title}
+                </h3>
 
-            {/* ── CTA row ── */}
-            <div className="mt-7 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.32em] text-[#c5a059]">
-                <span>Explore More</span>
-                <MoveRight
-                    size={13}
-                    className="transition-all duration-400 group-hover:translate-x-2 group-hover:text-white"
-                />
+                {/* ── Description ── */}
+                <p className="flex-1 text-[14px] sm:text-[16px] leading-relaxed text-foreground/50 transition-colors duration-500 group-hover:text-foreground/80 font-light">
+                    {description}
+                </p>
+
+                {/* ── CTA row ── */}
+                <div className="mt-8 sm:mt-12 flex items-center gap-4 sm:gap-5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.4em] sm:tracking-[0.5em] text-primary/60 transition-all duration-500 group-hover:text-primary group-hover:gap-8">
+                    <span>Signature Experience</span>
+                    <MoveRight
+                        size={14}
+                        className="transition-all duration-500"
+                    />
+                </div>
             </div>
 
-            {/* ── Bottom shimmer line ── */}
-            <div
-                className="absolute bottom-0 left-0 h-[1.5px] w-0 transition-all duration-500 group-hover:w-full"
-                style={{
-                    background: "linear-gradient(90deg, transparent, #c5a059, transparent)",
-                }}
-                aria-hidden="true"
-            />
+            {/* ── Imperial Accent ── */}
+            <div className="absolute top-0 left-0 h-px w-0 bg-primary transition-all duration-1000 group-hover:w-full" />
+            <div className="absolute bottom-0 right-0 h-px w-0 bg-primary transition-all duration-1000 group-hover:w-full" />
 
         </article>
-
-
     );
 }

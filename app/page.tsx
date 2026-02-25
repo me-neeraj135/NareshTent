@@ -9,13 +9,13 @@ import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Naresh Tent House — Architects of Grand Celebrations",
+  title: "Naresh Imperial — Architects of Celestial Celebrations",
   description:
-    "Naresh Tent House is Uttar Pradesh's premier wedding design and event planning company. Bespoke decor, luxury lighting, floral artistry, and full event infrastructure for weddings, receptions, and parties.",
-  keywords: ["wedding decor", "tent house", "event planner UP", "wedding decorator Hamirpur", "Naresh Tent House"],
+    "The pinnacle of ultra-luxury wedding architecture and event design. Crafting palatial heritage events for the world's most discerning families through bespoke structural artistry and imperial precision.",
+  keywords: ["luxury wedding decor", "royal wedding planner", "imperial event design", "palatial mandaps", "exclusive event infrastructure", "Naresh Imperial"],
   openGraph: {
-    title: "Naresh Tent House — Architects of Grand Celebrations",
-    description: "Transforming visions into breathtaking realities. Premium wedding and event design in Uttar Pradesh.",
+    title: "Naresh Imperial — Architects of Celestial Celebrations",
+    description: "Translating ancestral majesty into structural reality. Bespoke ultra-luxury wedding design for a chosen few.",
     type: "website",
     locale: "en_IN",
   },
