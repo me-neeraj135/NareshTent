@@ -25,52 +25,66 @@ export default function Elevating() {
                 <svg style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
                     <defs>
                         <linearGradient id="gradSage" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#4A7C59" />
-                            <stop offset="50%" stopColor="#8FCB9B" />
+                            <stop offset="0%" stopColor="#2D5A27" />
+                            <stop offset="33%" stopColor="#4A7C59" />
+                            <stop offset="66%" stopColor="#8FCB9B" />
                             <stop offset="100%" stopColor="#D2E8E3" />
                         </linearGradient>
                         <linearGradient id="gradRose" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#E29578" />
-                            <stop offset="50%" stopColor="#FFDDD2" />
+                            <stop offset="0%" stopColor="#9D446E" />
+                            <stop offset="33%" stopColor="#E29578" />
+                            <stop offset="66%" stopColor="#FFDDD2" />
                             <stop offset="100%" stopColor="#83C5BE" />
                         </linearGradient>
                         <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#FFB703" />
-                            <stop offset="50%" stopColor="#FB8500" />
-                            <stop offset="100%" stopColor="#FFD700" />
+                            <stop offset="0%" stopColor="#FFD700" />
+                            <stop offset="50%" stopColor="#FFB703" />
+                            <stop offset="100%" stopColor="#FB8500" />
                         </linearGradient>
                         <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#7209B7" />
-                            <stop offset="50%" stopColor="#B5179E" />
+                            <stop offset="0%" stopColor="#3A0CA3" />
+                            <stop offset="33%" stopColor="#7209B7" />
+                            <stop offset="66%" stopColor="#B5179E" />
                             <stop offset="100%" stopColor="#F72585" />
+                        </linearGradient>
+                        <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#4CC9F0" />
+                            <stop offset="50%" stopColor="#4361EE" />
+                            <stop offset="100%" stopColor="#3F37C9" />
                         </linearGradient>
                     </defs>
                 </svg>
 
                 {/* Petal 1 - Top Left */}
-                <svg className="absolute top-[15%] left-[10%] h-24 w-24 opacity-60 animate-float drop-shadow-[0_0_20px_rgba(74,124,89,0.5)]" viewBox="0 0 100 100" fill="url(#gradSage)">
+                <svg className="absolute top-[15%] left-[10%] h-24 w-24 opacity-70 animate-float drop-shadow-[0_0_20px_rgba(74,124,89,0.6)]" viewBox="0 0 100 100" fill="url(#gradSage)">
                     <path d="M50 0C60 30 90 40 50 100C10 40 40 30 50 0Z" />
                 </svg>
 
                 {/* Petal 2 - Bottom Right */}
-                <svg className="absolute bottom-[20%] right-[10%] h-32 w-32 opacity-50 animate-drift drop-shadow-[0_0_25px_rgba(226,149,120,0.4)]" viewBox="0 0 100 100" fill="url(#gradRose)" style={{ animationDelay: '-3s' }}>
+                <svg className="absolute bottom-[20%] right-[10%] h-32 w-32 opacity-60 animate-drift drop-shadow-[0_0_25px_rgba(226,149,120,0.5)]" viewBox="0 0 100 100" fill="url(#gradRose)" style={{ animationDelay: '-3s' }}>
                     <path d="M50 0C80 20 100 50 50 100C0 50 20 20 50 0Z" />
                 </svg>
 
                 {/* Flower 1 - Center Left */}
-                <svg className="absolute top-[45%] left-[5%] h-20 w-20 opacity-50 animate-drift drop-shadow-[0_0_20px_rgba(114,9,183,0.4)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-7s' }}>
+                <svg className="absolute top-[45%] left-[5%] h-20 w-20 opacity-60 animate-drift drop-shadow-[0_0_20px_rgba(114,9,183,0.5)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-7s' }}>
                     <path d="M50 50C50 30 70 10 90 30C70 50 50 70 30 50C10 30 30 10 50 30M50 50C30 50 10 70 30 90C50 70 70 50 50 30M50 50C50 70 30 90 10 70C30 50 50 30 70 50C90 70 70 90 50 70" />
                 </svg>
 
                 {/* Star - Top Right */}
-                <svg className="absolute top-[10%] right-[15%] h-24 w-24 opacity-60 animate-float drop-shadow-[0_0_20px_rgba(255,183,3,0.6)]" viewBox="0 0 100 100" fill="url(#gradGold)" style={{ animationDelay: '-1.5s' }}>
+                <svg className="absolute top-[10%] right-[15%] h-24 w-24 opacity-70 animate-float drop-shadow-[0_0_20px_rgba(255,183,3,0.7)]" viewBox="0 0 100 100" fill="url(#gradGold)" style={{ animationDelay: '-1.5s' }}>
                     <path d="M50 10L61 35L87 35L66 51L74 76L50 61L26 76L34 51L13 35L39 35Z" />
                 </svg>
 
+                {/* Blue Glow - Middle Right */}
+                <svg className="absolute top-[35%] right-[5%] h-20 w-20 opacity-50 animate-float drop-shadow-[0_0_20px_rgba(67,97,238,0.5)]" viewBox="0 0 100 100" fill="url(#gradBlue)" style={{ animationDelay: '-4s' }}>
+                    <circle cx="50" cy="50" r="30" />
+                    <path d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z" fill="white" opacity="0.4" />
+                </svg>
+
                 {/* Extra accent - Bottom Left */}
-                <svg className="absolute bottom-[10%] left-[15%] h-16 w-16 opacity-40 animate-float drop-shadow-[0_0_15px_rgba(247,37,133,0.4)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-5s' }}>
-                    <circle cx="50" cy="50" r="40" stroke="url(#gradViolet)" strokeWidth="2" fill="none" opacity="0.5" />
-                    <path d="M50 10 L50 90 M10 50 L90 50" stroke="url(#gradViolet)" strokeWidth="2" />
+                <svg className="absolute bottom-[10%] left-[15%] h-16 w-16 opacity-50 animate-float drop-shadow-[0_0_15px_rgba(247,37,133,0.5)]" viewBox="0 0 100 100" fill="url(#gradViolet)" style={{ animationDelay: '-5s' }}>
+                    <circle cx="50" cy="50" r="40" stroke="url(#gradViolet)" strokeWidth="2" fill="none" opacity="0.6" />
+                    <path d="M50 10 L50 90 M10 50 L90 50" stroke="url(#gradViolet)" strokeWidth="3" />
                 </svg>
             </div>
 
