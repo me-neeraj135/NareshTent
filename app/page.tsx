@@ -4,6 +4,7 @@ import Elevating from "@/components/common/Elevating";
 import Expertise from "@/components/common/Expertise";
 import Portfolio from "@/components/common/Portfolio";
 import WhatWeOffer from "@/components/common/offer";
+import MediaSection from "@/components/common/MediaSection";
 import CTASection from "@/components/common/CTASection";
 import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
@@ -30,6 +31,7 @@ export default function Home() {
       <Expertise />
       <Portfolio />
       <WhatWeOffer />
+      <MediaSection />
       <CTASection />
       <Footer />
     </main>

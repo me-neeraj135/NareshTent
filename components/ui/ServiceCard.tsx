@@ -8,22 +8,35 @@ interface ServiceCardProps {
     title: string;
     description: string;
     image?: string;
+    video?: string;
 }
 
-export default function ServiceCard({ icon, title, description, image }: ServiceCardProps) {
+export default function ServiceCard({ icon, title, description, image, video }: ServiceCardProps) {
     return (
         <article className="glass-card group relative flex flex-col h-full p-6 sm:p-10 overflow-hidden
                             transition-all duration-1000 cursor-default border-primary/10">
 
-            {/* ── Background Image (Subtle Reveal) ── */}
-            {image && (
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src={image}
-                        alt=""
-                        className="h-full w-full object-cover transition-all duration-[2000ms]
-                                   opacity-0 group-hover:opacity-20 scale-110 group-hover:scale-100 grayscale hover:grayscale-0"
-                    />
+            {/* ── Background Media (Subtle Reveal) ── */}
+            {(image || video) && (
+                <div className="absolute inset-0 z-0 bg-black/50">
+                    {video ? (
+                        <video
+                            src={video}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="h-full w-full object-cover transition-all duration-[2000ms]
+                                       opacity-0 group-hover:opacity-40 scale-110 group-hover:scale-100 grayscale hover:grayscale-0"
+                        />
+                    ) : (
+                        <img
+                            src={image}
+                            alt=""
+                            className="h-full w-full object-cover transition-all duration-[2000ms]
+                                       opacity-0 group-hover:opacity-30 scale-110 group-hover:scale-100 grayscale hover:grayscale-0"
+                        />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-transparent" />
                 </div>
             )}
